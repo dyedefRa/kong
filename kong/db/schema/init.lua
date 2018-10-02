@@ -1280,6 +1280,11 @@ function Schema:process_auto_fields(input, context, nulls)
           (output[key] == nil or output[key] == "") then
         output[key] = utils.random_string()
       end
+
+    else
+      if field.legacy and field.uuid and output[key] == "" then
+        output[key] = null
+      end
     end
 
     if context == "update" then
