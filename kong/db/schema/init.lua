@@ -271,9 +271,6 @@ Schema.validators = {
   end,
 
   uuid = function(value)
-    if value == "" then
-      return true
-    end
     if #value ~= 36 then
       return nil
     end
@@ -1256,11 +1253,20 @@ function Schema:process_auto_fields(input, context, nulls)
   --]]
 
   for key, field in self:each_field(input) do
+
+    if field.legacy and field.uuid and output[key] == "" then
+      output[key] = null
+    end
+
     if field.auto then
       if field.uuid then
-        if (context == "insert" or context == "upsert") and
-           output[key] == nil or output[key] == "" then
+        if (context == "insert" or context == "upsert") and output[key] == nil then
           output[key] = utils.uuid()
+        end
+
+      elseif field.type == "string" then
+        if (context == "insert" or context == "upsert") and output[key] == nil then
+          output[key] = utils.random_string()
         end
 
       elseif (key == "created_at" and (context == "insert" or
@@ -1274,16 +1280,6 @@ function Schema:process_auto_fields(input, context, nulls)
         elseif field.type == "integer" then
           output[key] = now_s
         end
-
-      elseif field.type == "string" and
-          (context == "insert" or context == "upsert") and
-          (output[key] == nil or output[key] == "") then
-        output[key] = utils.random_string()
-      end
-
-    else
-      if field.legacy and field.uuid and output[key] == "" then
-        output[key] = null
       end
     end
 
