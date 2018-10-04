@@ -5,6 +5,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { http_endpoint = typedefs.url({ required = true }) },
           { method = { type = "string", default = "POST", one_of = { "POST", "PUT", "PATCH" }, }, },

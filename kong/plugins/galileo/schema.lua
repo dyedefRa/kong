@@ -5,6 +5,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { environment = { type = "string" }, },
           { retry_count = { type = "integer", default = 10 }, },

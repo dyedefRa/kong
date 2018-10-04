@@ -94,6 +94,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         default = { metrics = DEFAULT_METRICS },
         fields = {
           { host = typedefs.host({ required = true, default = "localhost" }), },
@@ -105,6 +106,7 @@ return {
               default  = DEFAULT_METRICS,
               elements = {
                 type = "record",
+                nullable = false,
                 fields = {
                   { name = { type = "string", required = true, one_of = STAT_NAMES }, },
                   { stat_type = { type = "string", required = true, one_of = STAT_TYPES }, },

@@ -6,6 +6,7 @@ return {
     { consumer = typedefs.no_consumer },
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { anonymous = { type = "string", uuid = true, legacy = true }, },
           { hide_credentials = { type = "boolean", default = false }, },

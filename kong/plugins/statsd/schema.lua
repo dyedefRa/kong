@@ -74,6 +74,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { host = typedefs.host({ default = "localhost" }), },
           { port = typedefs.port({ default = 8125 }), },
@@ -83,6 +84,7 @@ return {
               default = DEFAULT_METRICS,
               elements = {
                 type = "record",
+                nullable = false,
                 fields = {
                   { name = { type = "string", required = true, one_of = METRIC_NAMES }, },
                   { stat_type = { type = "string", required = true, one_of = STAT_TYPES }, },

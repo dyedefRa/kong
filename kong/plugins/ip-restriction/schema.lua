@@ -19,6 +19,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { whitelist = { type = "array", elements = ip, }, },
           { blacklist = { type = "array", elements = ip, }, },

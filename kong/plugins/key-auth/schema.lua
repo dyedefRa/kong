@@ -7,6 +7,7 @@ return {
     { consumer = typedefs.no_consumer },
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { key_names = {
               type = "array",

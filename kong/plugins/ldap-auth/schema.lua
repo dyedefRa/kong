@@ -9,6 +9,7 @@ return {
     { consumer = typedefs.no_consumer },
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { ldap_host = typedefs.host({ required = true }), },
           { ldap_port = typedefs.port({ required = true }), },

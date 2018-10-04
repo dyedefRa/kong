@@ -28,6 +28,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { second = { type = "number", gt = 0 }, },
           { minute = { type = "number", gt = 0 }, },

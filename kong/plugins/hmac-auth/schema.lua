@@ -15,6 +15,7 @@ return {
     { consumer = typedefs.no_consumer },
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { hide_credentials = { type = "boolean", default = false }, },
           { clock_skew = { type = "number", default = 300, gt = 0 }, },

@@ -10,6 +10,7 @@ return {
   name = "loggly",
   fields = {
     { config = {
+        nullable = false,
         type = "record",
         fields = {
           { host = typedefs.host({ default = "logs-01.loggly.com" }), },

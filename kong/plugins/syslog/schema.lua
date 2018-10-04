@@ -9,6 +9,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { log_level = severity },
           { successful_severity = severity },

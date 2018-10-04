@@ -28,6 +28,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { header_name = { type = "string", default = "x-kong-limit" }, },
           { limit_by = { type = "string",

@@ -8,6 +8,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { status_code = {
             type = "integer",

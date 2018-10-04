@@ -5,6 +5,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { host = typedefs.host({ required = true }), },
           { port = typedefs.port({ required = true }), },

@@ -3,6 +3,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { uri_param_names = {
               type = "set",

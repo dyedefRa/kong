@@ -6,6 +6,7 @@ return {
     { consumer = typedefs.no_consumer },
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { whitelist = {
               type = "array",

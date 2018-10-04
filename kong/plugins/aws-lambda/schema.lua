@@ -19,6 +19,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { timeout = { type = "number", required = true, default = 60000 }, },
           { keepalive = { type = "number", required = true, default = 60000 }, },

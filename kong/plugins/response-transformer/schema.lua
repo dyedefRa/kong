@@ -15,6 +15,7 @@ local colon_string_array = {
 
 local string_record = {
   type = "record",
+  nullable = false,
   fields = {
     { json = string_array },
     { headers = string_array },
@@ -24,6 +25,7 @@ local string_record = {
 
 local colon_string_record = {
   type = "record",
+  nullable = false,
   fields = {
     { json = colon_string_array },
     { headers = colon_string_array },
@@ -36,6 +38,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { remove = string_record },
           { replace = colon_string_record },

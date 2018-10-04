@@ -10,6 +10,7 @@ local strings_array = {
 
 local strings_array_record = {
   type = "record",
+  nullable = false,
   fields = {
     { body = strings_array },
     { headers = strings_array },
@@ -27,6 +28,7 @@ local colon_strings_array = {
 
 local colon_strings_array_record = {
   type = "record",
+  nullable = false,
   fields = {
     { body = colon_strings_array },
     { headers = colon_strings_array },
@@ -40,6 +42,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { http_method = typedefs.http_method },
           { remove  = strings_array_record },

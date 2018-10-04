@@ -18,6 +18,7 @@ return {
   fields = {
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { path = { type = "string",
                      required = true,

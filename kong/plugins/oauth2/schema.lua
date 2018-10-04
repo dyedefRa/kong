@@ -18,6 +18,7 @@ return {
     { consumer = typedefs.no_consumer },
     { config = {
         type = "record",
+        nullable = false,
         fields = {
           { scopes = { type = "array", elements = { type = "string" }, }, },
           { mandatory_scope = { type = "boolean", default = false, required = true }, },
